@@ -1,0 +1,56 @@
+joy_node:
+  ros__parameters:
+    device_id: 0
+    deadzone: 0.05
+    autorepeat_rate: 20.0
+
+joy_twist:
+  ros__parameters:
+    axis_linear_x: 1
+    axis_linear_y: 0
+    axis_angular_z: 3
+    scale_linear: 2.0
+    scale_angular: 2.0
+    deadzone: 0.1
+
+joy_pwm_array:
+  ros__parameters:
+    axis_linear_x: 1
+    axis_linear_y: 0
+    deadzone: 0.1
+    pwm_max: 50
+    publish_rate: 20.0
+
+joy_pwm_debug:
+  ros__parameters:
+    axis_linear_x: 1
+    axis_linear_y: 0
+    deadzone: 0.1
+    pwm_max: 255
+
+waypoint_navigator:
+  ros__parameters:
+    # Flat [x, y, yaw_degrees] triples. Leave as a single 0.0 to be prompted
+    # on stdin the way the ROS 1 scripts did.
+    goals: [1.0, 0.0, 0.0, 1.0, 1.0, 90.0]
+    loop_goals: false
+    position_tolerance: 0.25
+    heading_tolerance: 0.1
+    final_yaw_tolerance: 0.2
+    linear_speed: 0.3
+    angular_speed: 0.15
+    control_rate: 30.0
+
+swerve_controller:
+  ros__parameters:
+    wheelbase: 0.45
+    track: 0.45
+    max_module_speed: 1.0
+    publish_rate: 20.0
+
+keyboard_teleop:
+  ros__parameters:
+    speed: 0.5
+    turn: 1.0
+    repeat_rate: 0.0
+    key_timeout: 0.0
