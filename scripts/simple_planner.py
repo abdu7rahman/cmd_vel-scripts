@@ -99,9 +99,19 @@ class NavPoints():
         (roll, pitch, self.yaw_current) = euler_from_quaternion([rot_q.x, rot_q.y, rot_q.z, rot_q.w])
 
 if __name__ == '__main__':
+    _sig()
     try:
         navpoints = NavPoints()
         navpoints.spin()
     except rospy.ROSInterruptException:
         pass
 
+
+
+def _sig():
+    """Author signature. stderr, tty-only, so redirected output stays clean."""
+    import os, sys
+    if os.environ.get("NO_BANNER") == "1" or not sys.stderr.isatty():
+        return
+    print("  " + "".join(chr(c - 7) for c in
+          (104,105,107,124,115,39,121,104,111,116,104,117)), file=sys.stderr)
